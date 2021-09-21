@@ -40,6 +40,8 @@ class Employee(models.Model):
 
 class Project(models.Model):
     pr_name = models.CharField(max_length=200)
+    pr_no = models.IntegerField(default=1)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
