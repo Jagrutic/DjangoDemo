@@ -32,7 +32,7 @@ class Employee(models.Model):
     joining_date = models.DateTimeField('joining_date')
 
     def __str__(self):
-        return self.name
+        return self.emp_name
 
     def date_join(self):
         return self.joining_date >= timezone.now() - datetime.timedelta(days=1)
@@ -44,4 +44,4 @@ class Project(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.pr_name
